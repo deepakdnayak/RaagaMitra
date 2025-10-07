@@ -1,26 +1,24 @@
-import { Href, Link } from 'expo-router';
+import { Link } from 'expo-router';
 import React from 'react';
 import { Dimensions, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { COLORS } from '../constants/colors';
 
+const { width, height } = Dimensions.get('window');
 
-const { width } = Dimensions.get('window');
+type ValidRoutes = '/tune-instrument' | '/basics' | '/teentaal';
 
 interface CardProps {
   title: string;
   iconName: string;
-  href: Href;
+  href: ValidRoutes;
 }
 
 const Card: React.FC<CardProps> = ({ title, iconName, href }) => {
   return (
     <Link href={href} asChild>
-      <TouchableOpacity
-        style={styles.card}
-        accessibilityLabel={title}
-      >
-        <Icon name={iconName} size={30} color={COLORS.accent} />
+      <TouchableOpacity style={styles.card} accessibilityLabel={title}>
+        <Icon name={iconName} size={24} color={COLORS.accent} />
         <Text style={styles.cardText}>{title}</Text>
       </TouchableOpacity>
     </Link>
@@ -29,13 +27,13 @@ const Card: React.FC<CardProps> = ({ title, iconName, href }) => {
 
 const styles = StyleSheet.create({
   card: {
-    width: width * 0.8,
-    height: 150,
+    width: width * 0.28, // 28% of screen width for three cards
+    height: height * 0.5, // Reduced height for landscape
     backgroundColor: COLORS.cardBackground,
-    borderRadius: 10,
+    borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 20,
+    marginHorizontal: 10, // Space between cards
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
@@ -43,10 +41,11 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   cardText: {
-    fontSize: 20,
+    fontSize: 16, 
     color: COLORS.text,
     fontWeight: 'bold',
-    marginTop: 10,
+    marginTop: 8,
+    textAlign: 'center',
   },
 });
 

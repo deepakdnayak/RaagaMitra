@@ -16,10 +16,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: COLORS.background,
+    paddingHorizontal: 20,
   },
   text: {
-    fontSize: 18,
+    fontSize: 16, // Adjusted for landscape
     color: COLORS.text,
+    textAlign: 'center',
   },
 });
 

@@ -8,7 +8,13 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: COLORS.primary,
         tabBarInactiveTintColor: 'gray',
-        tabBarStyle: { backgroundColor: COLORS.background },
+        tabBarStyle: {
+          backgroundColor: COLORS.background,
+          height: 60, // Reduced height for landscape
+        },
+        tabBarLabelStyle: {
+          fontSize: 12, // Smaller labels
+        },
       }}
     >
       <Tabs.Screen
