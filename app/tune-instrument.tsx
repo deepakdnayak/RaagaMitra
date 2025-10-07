@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { COLORS } from '../../constants/colors';
+import { COLORS } from '../constants/colors';
 
-const Explore = () => {
+const TuneInstrument = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Explore Screen (Coming Soon - e.g., Search Lessons or Community)</Text>
+      <Text style={styles.text}>Tune Instrument Screen (e.g., Tabla Tuning Guide)</Text>
     </View>
   );
 };
@@ -23,4 +23,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Explore;
+export default TuneInstrument;

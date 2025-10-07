@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { COLORS } from '../../constants/colors';
+import { COLORS } from '../constants/colors';
 
-const Explore = () => {
+const Basics = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Explore Screen (Coming Soon - e.g., Search Lessons or Community)</Text>
+      <Text style={styles.text}>Basics Screen (e.g., Tabla Structure and Positioning)</Text>
     </View>
   );
 };
@@ -23,4 +23,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Explore;
+export default Basics;
