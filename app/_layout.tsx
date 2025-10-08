@@ -11,6 +11,7 @@ export default function RootLayout() {
       <Stack.Screen name="tune-instrument" />
       <Stack.Screen name="basics" />
       <Stack.Screen name="teentaal" />
+      <Stack.Screen name="learn-instrument/[level]" /> 
     </Stack>
   );
 }
