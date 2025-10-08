@@ -1,15 +1,16 @@
-import { Stack } from 'expo-router';
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Card from '../../components/Card';
 import { COLORS } from '../../constants/colors';
 
-
 const Home = () => {
   return (
-    <>
-      <Stack.Screen options={{ headerShown: false }} /> 
-      <View style={styles.container}>
+    <ImageBackground
+      source={require('../../assets/images/background.jpg')} // Path from app/(tabs)/ to root
+      style={styles.background}
+      resizeMode="cover"
+    >
+      <View style={styles.overlay}>
         <Text style={styles.title}>Welcome to RaagaMitra</Text>
         <ScrollView
           horizontal
@@ -21,23 +22,30 @@ const Home = () => {
           <Card title="Teentaal" iconName="drum" href="/teentaal" />
         </ScrollView>
       </View>
-    </>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
     flex: 1,
+  },
+  overlay: {
+    flex: 1,
+    backgroundColor: 'rgba(255, 255, 255, 0.5)', // Semi-transparent white for readability
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: COLORS.background,
     paddingVertical: 20,
   },
   title: {
-    fontSize: 22,
+    fontSize: 30,
     fontWeight: 'bold',
     color: COLORS.primary,
-    marginBottom: 20,
+    marginTop: 20,
+    marginBottom: 5,
+    textShadowColor: 'rgba(0, 0, 0, 0.5)', // Shadow for better contrast
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   cardContainer: {
     flexDirection: 'row',

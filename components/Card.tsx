@@ -27,13 +27,13 @@ const Card: React.FC<CardProps> = ({ title, iconName, href }) => {
 
 const styles = StyleSheet.create({
   card: {
-    width: width * 0.28, // 28% of screen width for three cards
-    height: height * 0.5, // Reduced height for landscape
+    width: width * 0.28,
+    height: height * 0.5,
     backgroundColor: COLORS.cardBackground,
-    borderRadius: 20,
+    borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    marginHorizontal: 10, // Space between cards
+    marginHorizontal: 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   cardText: {
-    fontSize: 16, 
+    fontSize: 16,
     color: COLORS.text,
     fontWeight: 'bold',
     marginTop: 8,
